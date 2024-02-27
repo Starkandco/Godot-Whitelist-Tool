@@ -1,0 +1,11 @@
+res://addons/user_whitelist/whitelist_dock.tscn
+res://addons/user_whitelist/whitelist_dock.gd
+res://addons/user_whitelist/whitelist_plugin.gd
+res://addons/user_whitelist/setup.cfg
+res://addons/example/main.tscn
+res://addons/user_whitelist/example/main.tscn
+res://addons/user_whitelist/example/main.gd
+res://addons/user_whitelist/example/example.tscn
+res://addons/user_whitelist/example/example.gd
+res://addons/user_whitelist/example/SecondScript.gd
+res://addons/user_whitelist/example/second_script.gd

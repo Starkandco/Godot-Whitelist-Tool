@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvaeenb7ncx4d"]
+
+[ext_resource type="Script" path="res://addons/user_whitelist/whitelist_dock.gd" id="1_8raj8"]
+
+[node name="WhiteListDock" type="MarginContainer"]
+offset_right = 103.0
+offset_bottom = 31.0
+script = ExtResource("1_8raj8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BrowseButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Browse"
+
+[node name="ClearButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Clear"
+
+[node name="LoadButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load cfg to edit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextEdit2" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Filepaths as PackedStringArray e.g. [\"res://test.gd\", \"res://folder/test2.gd\"] - this field is editable"
+wrap_mode = 1
+
+[node name="GenerateButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Generate File"
+
+[node name="FileDialogSelect" type="FileDialog" parent="."]
+title = "Open File(s)"
+initial_position = 1
+size = Vector2i(600, 600)
+ok_button_text = "Open"
+file_mode = 1
+filters = PackedStringArray("*.gd")
+
+[node name="GIFTDialogSelect" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(600, 600)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.gd")
+
+[node name="FileDialogOpen" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(600, 600)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("setup.cfg")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BrowseButton" to="." method="_on_browse_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/TextEdit2" to="." method="_on_text_edit_2_text_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GenerateButton" to="." method="_on_generate_button_pressed"]
+[connection signal="close_requested" from="FileDialogSelect" to="." method="_on_file_dialog_close_requested"]
+[connection signal="files_selected" from="FileDialogSelect" to="." method="_on_file_dialog_files_selected"]
+[connection signal="close_requested" from="GIFTDialogSelect" to="." method="_on_gift_dialog_select_close_requested"]
+[connection signal="file_selected" from="GIFTDialogSelect" to="." method="_on_gift_dialog_select_file_selected"]
+[connection signal="close_requested" from="FileDialogOpen" to="." method="_on_file_dialog_open_close_requested"]
+[connection signal="file_selected" from="FileDialogOpen" to="." method="_on_file_dialog_open_file_selected"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw4prrgvskh1p"]
+
+[ext_resource type="Script" path="res://addons/user_whitelist/whitelist_manager.gd" id="1_0mdn4"]
+
+[node name="WhiteList" type="Node"]
+script = ExtResource("1_0mdn4")
