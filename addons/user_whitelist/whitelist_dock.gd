@@ -66,7 +66,7 @@ func _on_load_button_pressed():
 	_toggle_generate()
 
 func _on_text_edit_2_text_changed():
-	if !%TextEdit2.text.begins_with("[") or !%TextEdit2.text.ends_with("]"): return
+	if not %TextEdit2.text.begins_with("[") or not %TextEdit2.text.ends_with("]"): return
 	_scripts = str_to_var(%TextEdit2.text)
 	
 	_toggle_generate()
@@ -74,7 +74,7 @@ func _on_text_edit_2_text_changed():
 
 #region Other
 func _filter_existing(value):
-	return !_scripts.has(value)
+	return not _scripts.has(value)
 
 func _toggle_generate():
 	if _scripts != []:
