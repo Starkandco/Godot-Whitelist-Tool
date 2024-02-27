@@ -15,7 +15,7 @@ func test_three(one_and = "test", two_args = "test"):
 func _test_four():
 	print("This should not be called as it has _ in the function name")
 
-#Try call alt_test as well to see the second script work
+#Try call "alt test" as well to see the second script work
 
 var text
 
