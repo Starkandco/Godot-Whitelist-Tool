@@ -4,20 +4,16 @@ extends Node2D
 #Functions are picked up from the script as follows for the first three functions here
 func test():
 	print("Test worked")
-	pass
 
 func test_two(one_arg):
 	prints("Test two worked:", one_arg)
-	pass
 
 func test_three(one_and = "test", two_args = "test"):
 	prints("Test three worked:", one_and, two_args)
-	pass
 
 #This function won't be added to the whitelist as it is virtual or private "_" in front of func name
 func _test_four():
 	print("This should not be called as it has _ in the function name")
-	pass
 
 #Try call alt_test as well to see the second script work
 
